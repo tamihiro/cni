@@ -73,7 +73,7 @@ func makeVeth(name string, mtu int) (peerName string, veth netlink.Link, err err
 			return
 
 		default:
-			err = fmt.Errorf("failed to make veth pair: %v", err)
+			err = fmt.Errorf("failed to make veth pair: %v (name: %v, peerName: %v, mtu: %v)", err, name, peerName, mtu)
 			return
 		}
 	}
